@@ -1,3 +1,5 @@
+api_url = 'https://script.google.com/macros/s/AKfycbzf-qjoBqWzsaGfoLHGE30yv19votesp_tsQRP5iVdbDBkD8bkXCgVDFMM6x1UZv_Wt/exec'
+
 // 初始化地圖
 const mymap = L.map('mapid').setView([23.7, 121], 8);
 
@@ -14,7 +16,7 @@ const groupLayers = {};
 let currentLayer = null;
 
 // 讀取 JSON 資料
-fetch('data.json') // ← 放在同一資料夾的 JSON 檔
+fetch(api_url) 
   .then(res => res.json())
   .then(data => {
     Object.entries(data).forEach(([groupName, items]) => {
@@ -79,4 +81,28 @@ fetch('data.json') // ← 放在同一資料夾的 JSON 檔
 
   .catch(err => {
     console.error('無法載入 JSON：', err);
+  });
+
+
+  // popup
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("data-source-btn");
+    const popup = document.getElementById("popup");
+    const close = document.getElementById("popup-close");
+
+    btn.addEventListener("click", () => {
+      popup.classList.toggle("popup-hidden");
+    });
+
+    close.addEventListener("click", () => {
+      popup.classList.add("popup-hidden");
+    });
+
+    // 點擊外部自動關閉（選擇性功能）
+    document.addEventListener("click", function (e) {
+      if (!popup.contains(e.target) && e.target !== btn) {
+        popup.classList.add("popup-hidden");
+      }
+    });
   });
