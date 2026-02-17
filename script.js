@@ -67,7 +67,7 @@ fetch(api_url)
     }
 
     // 自訂單選控制器（互斥切換圖層）
-    const control = L.control({ position: 'topright' });
+    const control = L.control({ position: 'bottomright' });
     control.onAdd = function () {
       const div = L.DomUtil.create('div', 'layer-control');
       // div.style.background = 'white';

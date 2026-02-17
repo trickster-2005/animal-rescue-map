@@ -27,7 +27,7 @@ html, body {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 8px;
-  background: linear-gradient(135deg, #00fffb 0%, #2f00ff 100%);
+  background: linear-gradient(135deg, #d0d0d0 0%, #b0b0b0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -54,13 +54,13 @@ html, body {
   width: 90%;
   max-width: 1400px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(150, 150, 150, 0.1);
   overflow: hidden;
 }
 
 .layer-control {
   background: rgba(20, 20, 35, 0.95) !important;
-  border: 1px solid rgba(0, 212, 255, 0.2) !important;
+  border: 1px solid rgba(150, 150, 150, 0.15) !important;
   border-radius: 8px !important;
   padding: 10px !important;
   backdrop-filter: blur(10px);
@@ -69,8 +69,8 @@ html, body {
 .layer-control button {
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid rgba(0, 212, 255, 0.3);
-  background-color: rgba(0, 100, 150, 0.4);
+  border: 1px solid rgba(150, 150, 150, 0.2);
+  background-color: rgba(80, 80, 100, 0.3);
   color: #e0e0e0;
   font-weight: 500;
   font-size: 0.9rem;
@@ -82,9 +82,9 @@ html, body {
 }
 
 .layer-control button:hover {
-  background-color: rgba(0, 150, 255, 0.6);
-  border-color: rgba(0, 212, 255, 0.6);
-  box-shadow: 0 0 12px rgba(0, 212, 255, 0.3);
+  background-color: rgba(120, 120, 140, 0.5);
+  border-color: rgba(180, 180, 180, 0.5);
+  box-shadow: 0 0 12px rgba(150, 150, 150, 0.2);
   transform: translateX(2px);
 }
 
@@ -94,7 +94,7 @@ html, body {
 
 .custom-tooltip {
   background: rgba(20, 20, 35, 0.95) !important;
-  border: 1px solid rgba(0, 212, 255, 0.3) !important;
+  border: 1px solid rgba(150, 150, 150, 0.2) !important;
   border-radius: 6px !important;
   color: #e0e0e0 !important;
   font-family: 'Inter', sans-serif !important;
@@ -105,7 +105,7 @@ html, body {
 
 .leaflet-popup-content-wrapper {
   background: rgba(20, 20, 35, 0.95) !important;
-  border: 1px solid rgba(0, 212, 255, 0.2) !important;
+  border: 1px solid rgba(150, 150, 150, 0.15) !important;
   border-radius: 8px !important;
   color: #e0e0e0 !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
@@ -118,12 +118,18 @@ html, body {
 }
 
 .leaflet-popup-content b {
-  color: #00d4ff;
+  color: #d0d0d0;
+  transition: color 0.3s ease;
+}
+
+.marker-highlight .leaflet-popup-content b {
+  color: #b8b8ff;
+  font-weight: 600;
 }
 
 .leaflet-popup-tip {
   background: rgba(20, 20, 35, 0.95) !important;
-  border-color: rgba(0, 212, 255, 0.2) !important;
+  border-color: rgba(150, 150, 150, 0.15) !important;
 }
 
 /* popup */
@@ -132,7 +138,7 @@ html, body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: linear-gradient(135deg, rgba(0, 150, 255, 0.8), rgba(0, 100, 200, 0.8));
+  background: linear-gradient(135deg, rgba(120, 120, 140, 0.8), rgba(100, 100, 120, 0.8));
   color: white;
   padding: 12px 16px;
   border-radius: 8px;
@@ -140,15 +146,15 @@ html, body {
   font-weight: 500;
   cursor: pointer;
   z-index: 1000;
-  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
-  border: 1px solid rgba(0, 212, 255, 0.5);
+  box-shadow: 0 4px 15px rgba(150, 150, 150, 0.15);
+  border: 1px solid rgba(150, 150, 150, 0.3);
   transition: all 0.3s ease;
   font-family: 'Inter', sans-serif;
 }
 
 .data-source-btn:hover {
-  background: linear-gradient(135deg, rgba(0, 180, 255, 0.9), rgba(0, 130, 230, 0.9));
-  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+  background: linear-gradient(135deg, rgba(140, 140, 160, 0.9), rgba(120, 120, 140, 0.9));
+  box-shadow: 0 6px 20px rgba(150, 150, 150, 0.25);
   transform: translateY(-2px);
 }
 
@@ -158,7 +164,7 @@ html, body {
   right: 20px;
   width: 300px;
   background: rgba(20, 20, 35, 0.95);
-  border: 1px solid rgba(0, 212, 255, 0.3);
+  border: 1px solid rgba(150, 150, 150, 0.2);
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
   padding: 0;
@@ -183,19 +189,19 @@ html, body {
 
 .popup-text a {
   display: inline-block;
-  color: #00d4ff;
+  color: #c0c0c0;
   text-decoration: none;
   font-weight: 500;
   padding: 6px 12px;
-  border: 1px solid rgba(0, 212, 255, 0.5);
+  border: 1px solid rgba(150, 150, 150, 0.3);
   border-radius: 4px;
   transition: all 0.3s ease;
 }
 
 .popup-text a:hover {
-  background: rgba(0, 212, 255, 0.1);
-  border-color: rgba(0, 212, 255, 0.8);
-  box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+  background: rgba(150, 150, 150, 0.1);
+  border-color: rgba(180, 180, 180, 0.5);
+  box-shadow: 0 0 8px rgba(150, 150, 150, 0.2);
 }
 
 .popup-hidden {
@@ -217,7 +223,7 @@ html, body {
 }
 
 .close:hover {
-  color: #00d4ff;
+  color: #d0d0d0;
   transform: rotate(90deg);
 }
 
@@ -237,16 +243,98 @@ html, body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .main-wrapper {
+    padding: 20px 15px;
+  }
+  
+  .header {
+    margin-bottom: 20px;
+  }
+  
   .header h1 {
     font-size: 1.8rem;
+    margin-bottom: 6px;
+  }
+  
+  .header .subtitle {
+    font-size: 0.9rem;
   }
   
   #mapid {
-    height: 400px;
+    height: 500px;
+    width: 95%;
   }
   
   .data-source-btn {
     padding: 10px 14px;
+    font-size: 0.8rem;
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  #popup {
+    bottom: 60px;
+    right: 15px;
+    width: 280px;
     font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-wrapper {
+    padding: 15px 12px;
+    min-height: auto;
+  }
+  
+  .header {
+    margin-bottom: 15px;
+  }
+  
+  .header h1 {
+    font-size: 1.4rem;
+  }
+  
+  .header .subtitle {
+    font-size: 0.8rem;
+  }
+  
+  #mapid {
+    height: 70vh;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+  
+  .layer-control {
+    max-width: 140px !important;
+  }
+  
+  .layer-control button {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+  
+  .data-source-btn {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  #popup {
+    bottom: 50px;
+    right: 10px;
+    width: 260px;
+    font-size: 0.8rem;
+  }
+  
+  .popup-content {
+    padding: 12px;
+  }
+  
+  .popup-text a {
+    font-size: 0.8rem;
+    padding: 5px 10px;
   }
 }
