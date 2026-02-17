@@ -66,6 +66,12 @@ html, body {
   backdrop-filter: blur(10px);
 }
 
+.layer-control-mobile {
+  display: flex !important;
+  flex-direction: column;
+  gap: 4px !important;
+}
+
 .layer-control button {
   width: 100%;
   padding: 10px 14px;

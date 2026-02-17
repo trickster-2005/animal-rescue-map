@@ -85,9 +85,14 @@ fetch(api_url)
     const control = L.control({ position: 'bottomright' });
     control.onAdd = function () {
       const div = L.DomUtil.create('div', 'layer-control');
-      // div.style.background = 'white';
       div.style.padding = '8px';
       div.style.border = '1px solid gray';
+
+      // 根據視窗寬度判斷是否為手機
+      const isMobile = window.innerWidth <= 480;
+      if (isMobile) {
+        div.classList.add('layer-control-mobile');
+      }
 
       Object.keys(groupLayers).forEach(name => {
         const btn = document.createElement('button');
