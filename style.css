@@ -220,7 +220,7 @@ html, body {
   position: fixed;
   bottom: 70px;
   right: 20px;
-  width: 700px;
+  width: 400px;
   max-width: 90vw;
   background: rgba(20, 20, 35, 0.95);
   border: 1px solid rgba(120, 150, 180, 0.25);
