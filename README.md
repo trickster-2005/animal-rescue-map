@@ -1,6 +1,8 @@
 
 ### [網站 Link](https://trickster-2005.github.io/animal-rescue-map)
 
+English Description Below
+
 ## 製作動機與目的
 
 在台灣需要救援的野生動物，並沒有一個統一的單位或協會單獨負責救傷，而是必須根據不同類型（如哺乳類、兩棲爬蟲類、鳥類、外來種等）分別至不同單位尋求協助與救傷。
@@ -13,7 +15,22 @@
 ## 技術細節
 A. 將由野生動物急救官方所製作的「全台救援單位聯絡表單」運用 Pyhton 根據地址轉成經緯度，並取得地址、名稱、縣市等資料，整理成另一表單。
 
-B. 讀取表單，使用 leaflet 呈現在地圖上。
+B. 讀取表單，使用 Leaflet.js 呈現在地圖上。
 
 
+# English Description
+---
 
+## Why this Project?
+In Taiwan, there is no single unified organization responsible for all wildlife rescue. Instead, rescuers must contact different units based on the animal species (e.g., mammals, amphibians/reptiles, birds, or invasive species).
+
+While public information is available, there is currently no integrated map that visualizes and categorizes these resources. This website aims to bridge that gap by consolidating data from the Wildlife First Aid Station Official Website and its National Wildlife Rescue Contact List. We have developed an interactive map that displays the addresses and contact information of rescue units, filtered by animal type.
+
+Although we have established a Google Sheet to feed data into the map—with the long-term goal of leveraging "civic power" through public crowdsourcing—the editing feature is currently restricted. We are first focusing on establishing a verification mechanism to ensure the accuracy and reliability of the information before opening it to public contributions.
+
+## Technical Details
+A. Geocoding & Data Processing
+Using Python, we process the "National Wildlife Rescue Contact List." The script converts physical addresses into geographic coordinates (latitude and longitude) and extracts key metadata such as unit names, counties, and contact details to generate a structured dataset.
+
+B. Mapping & Visualization
+The processed data is read and rendered onto an interactive map interface using Leaflet.js, allowing users to easily locate the nearest rescue center.
