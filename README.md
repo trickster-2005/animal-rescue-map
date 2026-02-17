@@ -1,6 +1,9 @@
 
-### Google Sheet Link
-https://docs.google.com/spreadsheets/d/1HIcS7Fam7K_gxX_HqXR0XtG6Jox6P6-bIywGP2W-Ats/edit?gid=117763454#gid=117763454
+[網站連結](https://trickster-2005.github.io/animal-rescue-map) 
+
+\
+
+[編輯資料庫](https://docs.google.com/spreadsheets/d/1HIcS7Fam7K_gxX_HqXR0XtG6Jox6P6-bIywGP2W-Ats/edit?gid=117763454#gid=117763454)
 
 ### Workflow
 1. google speardsheet(excel) 共同編輯
