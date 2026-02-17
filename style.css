@@ -1,3 +1,9 @@
+/* ========================================
+   WILDLIFE RESCUE MAP - Stylesheet
+   Dark theme with light blue accents
+   ======================================== */
+
+/* ========== RESET & BASE STYLES ========== */
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +17,8 @@ html, body {
   min-height: 100vh;
 }
 
+/* ========== LAYOUT & CONTAINERS ========== */
+
 .main-wrapper {
   min-height: 100vh;
   display: flex;
@@ -23,14 +31,41 @@ html, body {
   margin-bottom: 30px;
 }
 
+.header-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
 .header h1 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 8px;
-  background: linear-gradient(135deg, #d0d0d0 0%, #b0b0b0 100%);
+  background: linear-gradient(135deg, #b8d4e8 0%, #8fa5c2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Credit badge displayed next to title */
+.credit-badge {
+  font-size: 0.65rem;
+  color: #7a8a9a;
+  background: rgba(120, 150, 180, 0.08);
+  border: 1px solid rgba(120, 150, 180, 0.15);
+  border-radius: 20px;
+  padding: 4px 10px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.credit-badge:hover {
+  color: #8fa5c2;
+  background: rgba(120, 150, 180, 0.12);
+  border-color: rgba(120, 150, 180, 0.25);
 }
 
 .header .subtitle {
@@ -48,24 +83,29 @@ html, body {
   position: relative;
 }
 
+/* ========== MAP STYLES ========== */
+
 #mapid {
   border-radius: 12px;
   height: 600px;
-  width: 90%;
+  width: 97%;
   max-width: 1400px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(150, 150, 150, 0.1);
+  border: 1px solid rgba(120, 150, 180, 0.15);
   overflow: hidden;
 }
 
+/* ========== LAYER CONTROL STYLES ========== */
+
 .layer-control {
   background: rgba(20, 20, 35, 0.95) !important;
-  border: 1px solid rgba(150, 150, 150, 0.15) !important;
+  border: 1px solid rgba(120, 150, 180, 0.2) !important;
   border-radius: 8px !important;
   padding: 10px !important;
   backdrop-filter: blur(10px);
 }
 
+/* Mobile: display buttons vertically */
 .layer-control-mobile {
   display: flex !important;
   flex-direction: column;
@@ -75,8 +115,8 @@ html, body {
 .layer-control button {
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid rgba(150, 150, 150, 0.2);
-  background-color: rgba(80, 80, 100, 0.3);
+  border: 1px solid rgba(120, 150, 180, 0.25);
+  background-color: rgba(80, 100, 130, 0.25);
   color: #e0e0e0;
   font-weight: 500;
   font-size: 0.9rem;
@@ -88,9 +128,9 @@ html, body {
 }
 
 .layer-control button:hover {
-  background-color: rgba(120, 120, 140, 0.5);
-  border-color: rgba(180, 180, 180, 0.5);
-  box-shadow: 0 0 12px rgba(150, 150, 150, 0.2);
+  background-color: rgba(100, 130, 160, 0.4);
+  border-color: rgba(140, 170, 200, 0.5);
+  box-shadow: 0 0 12px rgba(120, 150, 180, 0.2);
   transform: translateX(2px);
 }
 
@@ -98,9 +138,11 @@ html, body {
   margin-bottom: 0;
 }
 
+/* ========== TOOLTIP STYLES ========== */
+
 .custom-tooltip {
   background: rgba(20, 20, 35, 0.95) !important;
-  border: 1px solid rgba(150, 150, 150, 0.2) !important;
+  border: 1px solid rgba(120, 150, 180, 0.25) !important;
   border-radius: 6px !important;
   color: #e0e0e0 !important;
   font-family: 'Inter', sans-serif !important;
@@ -109,9 +151,16 @@ html, body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
 }
 
+.custom-tooltip b {
+  color: #f0f0f0 !important;
+  font-weight: 600 !important;
+}
+
+/* ========== MARKER POPUP STYLES ========== */
+
 .leaflet-popup-content-wrapper {
   background: rgba(20, 20, 35, 0.95) !important;
-  border: 1px solid rgba(150, 150, 150, 0.15) !important;
+  border: 1px solid rgba(120, 150, 180, 0.2) !important;
   border-radius: 8px !important;
   color: #e0e0e0 !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
@@ -128,6 +177,7 @@ html, body {
   transition: color 0.3s ease;
 }
 
+/* Highlight popup title on marker hover */
 .marker-highlight .leaflet-popup-content b {
   color: #b8b8ff;
   font-weight: 600;
@@ -135,16 +185,17 @@ html, body {
 
 .leaflet-popup-tip {
   background: rgba(20, 20, 35, 0.95) !important;
-  border-color: rgba(150, 150, 150, 0.15) !important;
+  border-color: rgba(120, 150, 180, 0.2) !important;
 }
 
-/* popup */
+/* ========== UI BUTTONS & MODALS ========== */
 
+/* About website button (fixed bottom right) */
 .data-source-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: linear-gradient(135deg, rgba(120, 120, 140, 0.8), rgba(100, 100, 120, 0.8));
+  background: linear-gradient(135deg, rgba(100, 130, 160, 0.8), rgba(80, 110, 140, 0.8));
   color: white;
   padding: 12px 16px;
   border-radius: 8px;
@@ -152,25 +203,27 @@ html, body {
   font-weight: 500;
   cursor: pointer;
   z-index: 1000;
-  box-shadow: 0 4px 15px rgba(150, 150, 150, 0.15);
-  border: 1px solid rgba(150, 150, 150, 0.3);
+  box-shadow: 0 4px 15px rgba(120, 150, 180, 0.15);
+  border: 1px solid rgba(120, 150, 180, 0.4);
   transition: all 0.3s ease;
   font-family: 'Inter', sans-serif;
 }
 
 .data-source-btn:hover {
-  background: linear-gradient(135deg, rgba(140, 140, 160, 0.9), rgba(120, 120, 140, 0.9));
-  box-shadow: 0 6px 20px rgba(150, 150, 150, 0.25);
+  background: linear-gradient(135deg, rgba(120, 150, 180, 0.9), rgba(100, 130, 160, 0.9));
+  box-shadow: 0 6px 20px rgba(120, 150, 180, 0.25);
   transform: translateY(-2px);
 }
 
+/* About popup container */
 #popup {
   position: fixed;
   bottom: 70px;
   right: 20px;
-  width: 300px;
+  width: 700px;
+  max-width: 90vw;
   background: rgba(20, 20, 35, 0.95);
-  border: 1px solid rgba(150, 150, 150, 0.2);
+  border: 1px solid rgba(120, 150, 180, 0.25);
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
   padding: 0;
@@ -180,7 +233,7 @@ html, body {
 }
 
 .popup-content {
-  padding: 16px;
+  padding: 20px;
   position: relative;
 }
 
@@ -191,29 +244,44 @@ html, body {
 
 .popup-text p {
   margin-bottom: 12px;
+  font-size: 14px;
 }
 
+/* Regular links in popup text */
 .popup-text a {
-  display: inline-block;
-  color: #c0c0c0;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 6px 12px;
-  border: 1px solid rgba(150, 150, 150, 0.3);
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  color: #8fa5c2;
+  text-decoration: underline;
+  transition: color 0.3s ease;
 }
 
 .popup-text a:hover {
-  background: rgba(150, 150, 150, 0.1);
-  border-color: rgba(180, 180, 180, 0.5);
-  box-shadow: 0 0 8px rgba(150, 150, 150, 0.2);
+  color: #b8d4e8;
+}
+
+/* Action buttons (Edit & GitHub) in popup footer */
+.popup-action-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(120, 150, 180, 0.15);
+  border: 1px solid rgba(120, 150, 180, 0.3);
+  border-radius: 4px;
+  color: #8fa5c2;
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.popup-action-btn:hover {
+  background: rgba(120, 150, 180, 0.25);
+  border-color: rgba(120, 150, 180, 0.5);
+  color: #b8d4e8;
 }
 
 .popup-hidden {
   display: none !important;
 }
 
+/* Close button (X) for popup */
 .close {
   position: absolute;
   top: 12px;
@@ -233,6 +301,8 @@ html, body {
   transform: rotate(90deg);
 }
 
+/* ========== LOADING SPINNER ========== */
+
 #loader {
   position: absolute;
   top: 0;
@@ -247,7 +317,9 @@ html, body {
   border-radius: 12px;
 }
 
-/* Responsive */
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablet breakpoint: max width 768px */
 @media (max-width: 768px) {
   .main-wrapper {
     padding: 20px 15px;
@@ -286,6 +358,7 @@ html, body {
   }
 }
 
+/* Mobile breakpoint: max width 480px */
 @media (max-width: 480px) {
   .main-wrapper {
     padding: 15px 12px;
@@ -331,16 +404,16 @@ html, body {
   #popup {
     bottom: 50px;
     right: 10px;
-    width: 260px;
+    width: 85vw;
+    max-width: 480px;
     font-size: 0.8rem;
   }
   
   .popup-content {
-    padding: 12px;
+    padding: 16px;
   }
   
   .popup-text a {
     font-size: 0.8rem;
-    padding: 5px 10px;
   }
 }
