@@ -51,6 +51,21 @@ fetch(api_url)
             電話：${item.phone || '無'}
           `);
 
+          // Marker hover 效果
+          marker.on('mouseover', function() {
+            const popup = this.getPopup();
+            if (popup) {
+              popup._contentNode?.parentElement?.classList.add('marker-highlight');
+            }
+          });
+
+          marker.on('mouseout', function() {
+            const popup = this.getPopup();
+            if (popup) {
+              popup._contentNode?.parentElement?.classList.remove('marker-highlight');
+            }
+          });
+
           marker.addTo(layerGroup);
         }
       });
