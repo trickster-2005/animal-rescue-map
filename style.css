@@ -166,20 +166,22 @@ html, body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
 }
 
-.leaflet-popup-content {
+.leaflet-popup-content,
+.leaflet-popup-content * {
   color: #e0e0e0 !important;
   font-family: 'Inter', sans-serif !important;
   font-size: 0.9rem !important;
 }
 
 .leaflet-popup-content b {
-  color: #d0d0d0;
+  color: #e0e0e0 !important;
   transition: color 0.3s ease;
+  font-weight: 600;
 }
 
-/* Highlight popup title on marker hover */
+/* Ensure marker hover does not change popup title color; keep consistent */
 .marker-highlight .leaflet-popup-content b {
-  color: #b8b8ff;
+  color: #e0e0e0 !important;
   font-weight: 600;
 }
 
